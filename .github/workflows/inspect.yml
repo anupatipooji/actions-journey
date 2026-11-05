@@ -1,0 +1,17 @@
+name: inspect
+on:
+  push:
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to Repo
+        uses: actions/checkout@v4
+      - name: print details
+        run: |
+          uname -a
+          ls -al
+      - name: print the number
+        run: |
+          find . -type f | wc -l
+      
